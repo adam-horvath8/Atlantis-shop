@@ -1,34 +1,34 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
-function useDataFetching(url) {
-  const [productsData, setProductsData] = useState([]);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+// function useDataFetching(url) {
+//   const [productsData, setProductsData] = useState([]);
+//   const [error, setError] = useState(null);
+//   const [isLoading, setIsLoading] = useState(true);
 
-  console.log(productsData);
+//   console.log(productsData);
   
-  useEffect(() => {
-    const getProductsData = async () => {
-      try {
-        const response = await fetch(url);
+//   useEffect(() => {
+//     const getProductsData = async () => {
+//       try {
+//         const response = await fetch(url);
 
-        if (!response.ok) {
-          throw new Error("Could not find the data");
-        }
+//         if (!response.ok) {
+//           throw new Error("Could not find the data");
+//         }
 
-        let actualProductsData = await response.json();
-        setProductsData(actualProductsData);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+//         let actualProductsData = await response.json();
+//         setProductsData(actualProductsData);
+//       } catch (error) {
+//         setError(error);
+//       } finally {
+//         setIsLoading(false);
+//       }
+//     };
 
-    getProductsData();
-  }, []);
+//     getProductsData();
+//   }, []);
 
-  return { productsData, error, isLoading };
-}
+//   return { productsData, error, isLoading };
+// }
 
-export default useDataFetching;
+// export default useDataFetching;

@@ -1,7 +1,11 @@
 import "./shop.css";
 import ProductCard from "../../components/ProductCard";
+import { useContext } from "react";
+import { ProductContext } from "../../context/ProductContextProvider";
 
-const Shop = ({ productsData, error, isLoading }) => {
+const Shop = () => {
+  const { productsData, error, isLoading } = useContext(ProductContext);
+
   return (
     <>
       {error && <h4>A network error was encountered!</h4>}

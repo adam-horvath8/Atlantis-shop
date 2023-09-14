@@ -3,19 +3,23 @@ import { ProductContext } from "../context/ProductContextProvider";
 import "./productCard.css";
 
 const ProductCard = ({ product }) => {
-  const { addToCart } = useContext(ProductContext);
+  const { addToCart, removeFromCart } = useContext(ProductContext);
+
+  // console.log(product.id);
 
   return (
     <div className="card">
-      <img src={product.image} alt={product.title} />
+      <div className="img-div">
+        <img src={product.image} alt={product.title} />
+      </div>
       <div className="product-description">
         <span>{product.title}</span>
         <span>{product.price + " EUR"}</span>
       </div>
       <div className="toCart">
-        <button>-</button>
+        <button onClick={() => removeFromCart(product.id)}>-</button>
         <input type="number" />
-        <button >+</button>
+        <button onClick={() => addToCart(product.id)}>+</button>
       </div>
     </div>
   );

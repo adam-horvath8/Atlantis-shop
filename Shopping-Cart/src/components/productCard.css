@@ -14,15 +14,15 @@
   opacity: 1;
 }
 
-.card > img {
+.img-div > img {
   padding: 40px;
-  object-fit: cover;
+  object-fit: contain;
   max-width: 100%;
-  max-height: 80%;
+  height: 400px;
   transition: padding 0.25s ease-in;
 }
 
-.card > img:hover {
+.img-div > img:hover {
   padding: 10px;
 }
 
@@ -30,6 +30,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  flex: 1;
 }
 
 .product-description > span {
