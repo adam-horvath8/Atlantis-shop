@@ -1,0 +1,38 @@
+.card {
+  height: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  border: black 8px solid;
+  padding: 20px;
+  opacity: 0.9;
+}
+
+.card:hover {
+  opacity: 1;
+}
+
+.card > img {
+  padding: 40px;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 80%;
+  transition: padding 0.25s ease-in;
+}
+
+.card > img:hover {
+  padding: 10px;
+}
+
+.product-description {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.product-description > span {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}

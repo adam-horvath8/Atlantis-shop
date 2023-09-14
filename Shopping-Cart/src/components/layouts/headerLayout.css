@@ -1,0 +1,21 @@
+header {
+  min-height: 25vh;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heading-div {
+  flex: 3;
+  background-color: aqua;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+.heading-div > h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
