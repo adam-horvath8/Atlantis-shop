@@ -3,11 +3,20 @@ import { createContext, useState, useEffect } from "react";
 export const ProductContext = createContext(null);
 
 export const ProductContextProvider = ({ children }) => {
+  const getDefaultCart = () => {
+    let cart = {};
+    for (let i = 1; i < productsData.length + 1; i++) {
+      cart[i] = 0;
+    }
+    return cart;
+  };
+
   const [productsData, setProductsData] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [cartItems, setCartItems] = useState({});
+  const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(0);
 
-  //   console.log(productsData);
 
   useEffect(() => {
     const getProductsData = async () => {
@@ -30,37 +39,43 @@ export const ProductContextProvider = ({ children }) => {
     getProductsData();
   }, []);
 
-  const getDefaultCart = () => {
-    let cart = {};
-    for (let i = 1; i < productsData.length + 1; i++) {
-      cart[i] = 0;
+  useEffect(() => {
+    if (productsData.length > 0) {
+      setCartItems(getDefaultCart());
     }
-    return cart;
-  };
-
-  const [cartItems, setCartItems] = useState(getDefaultCart());
-
-  console.log(getDefaultCart());
+  }, [productsData]);
 
   const addToCart = (itemId) => {
-    console.log(itemId);
-    setCartItems((prev) => ({
-      ...prev,
-      [itemId]: prev[itemId] + 1,
-    }));
+    setCartItems((prev) => {
+      const updatedCart = {
+        ...prev,
+        [itemId]: prev[itemId] + 1,
+      };
+      console.log(updatedCart); // Log the updated cart here
+      return updatedCart; // Return the new state object
+    });
   };
 
   const removeFromCart = (itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    setCartItems((prev) => {
+      if (prev[itemId] > 0) {
+        return { ...prev, [itemId]: prev[itemId] - 1 };
+      } else {
+        return { ...prev };
+      }
+    });
   };
 
   const contextValue = {
     cartItems,
+    setCartItems,
     addToCart,
     removeFromCart,
     productsData,
     error,
     isLoading,
+    setNumberOfItemsInCart,
+    numberOfItemsInCart,
   };
 
   return (

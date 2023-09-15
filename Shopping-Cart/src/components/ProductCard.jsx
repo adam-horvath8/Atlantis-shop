@@ -1,12 +1,7 @@
-import React, { useContext } from "react";
-import { ProductContext } from "../context/ProductContextProvider";
 import "./productCard.css";
+import QuantityCounter from "./QuantityCounter";
 
 const ProductCard = ({ product }) => {
-  const { addToCart, removeFromCart } = useContext(ProductContext);
-
-  // console.log(product.id);
-
   return (
     <div className="card">
       <div className="img-div">
@@ -16,11 +11,7 @@ const ProductCard = ({ product }) => {
         <span>{product.title}</span>
         <span>{product.price + " EUR"}</span>
       </div>
-      <div className="toCart">
-        <button onClick={() => removeFromCart(product.id)}>-</button>
-        <input type="number" />
-        <button onClick={() => addToCart(product.id)}>+</button>
-      </div>
+      <QuantityCounter product={product} />
     </div>
   );
 };
