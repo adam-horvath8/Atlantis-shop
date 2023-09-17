@@ -7,6 +7,8 @@ import { ProductContext } from "../../context/ProductContextProvider";
 const HeaderLayout = () => {
   const { numberOfItemsInCart } = useContext(ProductContext);
 
+  console.log(numberOfItemsInCart);
+
   return (
     <>
       <header>
@@ -16,7 +18,7 @@ const HeaderLayout = () => {
           <div className="heading-nav">
             <button>Search</button>
             <NavLink to="cart">Cart</NavLink>
-            <span>{numberOfItemsInCart}</span>
+            <span>{numberOfItemsInCart > 0 && numberOfItemsInCart}</span>
           </div>
         </div>
 

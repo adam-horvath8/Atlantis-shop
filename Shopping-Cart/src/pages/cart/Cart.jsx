@@ -7,8 +7,6 @@ import "./cart.css";
 const Cart = () => {
   const { cartItems } = useContext(ProductContext);
 
-  console.log(Object.entries(cartItems));
-
   const hasValueGreaterThanZero = Object.values(cartItems).some(
     (value) => value > 0
   );

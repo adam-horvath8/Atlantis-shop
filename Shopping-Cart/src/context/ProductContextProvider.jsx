@@ -3,6 +3,7 @@ import { createContext, useState, useEffect } from "react";
 export const ProductContext = createContext(null);
 
 export const ProductContextProvider = ({ children }) => {
+  // new object that sets quantity 0 on cartItems
   const getDefaultCart = () => {
     let cart = {};
     for (let i = 1; i < productsData.length + 1; i++) {
@@ -16,9 +17,10 @@ export const ProductContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [cartItems, setCartItems] = useState({});
   const [numberOfItemsInCart, setNumberOfItemsInCart] = useState(0);
-
+  const [cartProducts, setCartProducts] = useState([]);
 
   useEffect(() => {
+    // fetch the products data from API
     const getProductsData = async () => {
       try {
         const response = await fetch("https://fakestoreapi.com/products");
@@ -39,11 +41,25 @@ export const ProductContextProvider = ({ children }) => {
     getProductsData();
   }, []);
 
+  // Set all items quantity to 0
   useEffect(() => {
     if (productsData.length > 0) {
       setCartItems(getDefaultCart());
     }
   }, [productsData]);
+
+  // array of items that have quantity more than 0
+  const cartItemIds = Object.entries(cartItems)
+    .filter(([itemId, quantity]) => quantity > 0)
+    .map(([itemId]) => Number(itemId));
+
+  useEffect(() => {
+    setCartProducts(
+      productsData.filter((product) => cartItemIds.includes(product.id))
+    );
+
+    setNumberOfItemsInCart(cartItemIds.length);
+  }, [cartItems]);
 
   const addToCart = (itemId) => {
     setCartItems((prev) => {
@@ -51,7 +67,7 @@ export const ProductContextProvider = ({ children }) => {
         ...prev,
         [itemId]: prev[itemId] + 1,
       };
-      console.log(updatedCart); // Log the updated cart here
+
       return updatedCart; // Return the new state object
     });
   };
@@ -67,6 +83,8 @@ export const ProductContextProvider = ({ children }) => {
   };
 
   const contextValue = {
+    cartItemIds,
+    cartProducts,
     cartItems,
     setCartItems,
     addToCart,
