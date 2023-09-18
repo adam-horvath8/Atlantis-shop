@@ -1,14 +1,14 @@
 header {
   min-height: 25vh;
-  background-color: yellow;
+  background-color: var(--third);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 30px;
 }
 
 .heading-div {
   flex: 3;
-  background-color: aqua;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -18,4 +18,23 @@ header {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  color: white;
+  font-size: 3rem;
+}
+
+.link {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: var(--second);
+}
+
+.cart-icon {
+  color: var(--primary);
+  font-size: 1.5rem;
 }

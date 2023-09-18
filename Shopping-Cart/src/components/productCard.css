@@ -5,7 +5,7 @@
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  border: black 8px solid;
+  border: var(--primary) 8px solid;
   padding: 20px;
   opacity: 0.9;
 }

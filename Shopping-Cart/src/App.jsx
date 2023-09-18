@@ -13,11 +13,20 @@ import Cart from "./pages/cart/Cart";
 import Error from "./components/Error";
 
 import { ProductContextProvider } from "./context/ProductContextProvider";
+import Navbar from "./components/layouts/Navbar";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<HeaderLayout />}>
+      <Route
+        path="/"
+        element={
+          <>
+            <HeaderLayout />
+            <Navbar />
+          </>
+        }
+      >
         <Route index element={<Home />} />
         <Route path="shop" element={<Shop />} />
         <Route path="about" element={<About />} />

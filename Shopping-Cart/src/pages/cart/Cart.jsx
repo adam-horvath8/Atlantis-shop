@@ -20,7 +20,10 @@ const Cart = () => {
             <Link to="/shop">Shop now!</Link>
           </>
         ) : (
-          <CartTable />
+          <>
+            <h2>Your Cart</h2>
+            <CartTable />
+          </>
         )}
       </div>
     </>

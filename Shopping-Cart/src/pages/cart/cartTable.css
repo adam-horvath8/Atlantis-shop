@@ -20,9 +20,27 @@ table {
 .cart-table-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .cart-table-container > h2 {
   padding: 50px;
+}
+
+.check-out {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.check-out > button {
+  margin-bottom: 20px;
+}
+
+.check-out > span {
+  margin-bottom: 20px;
+  font-size: 2rem;
 }

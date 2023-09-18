@@ -2,3 +2,14 @@
   margin: 0px;
   box-sizing: border-box;
 }
+
+:root {
+  --primary: #04080fff;
+  --second: #a1c6eaff;
+  --third: #507dbcff;
+  --fourth: #bbd1eaff;
+}
+
+a {
+  text-decoration: none;
+}

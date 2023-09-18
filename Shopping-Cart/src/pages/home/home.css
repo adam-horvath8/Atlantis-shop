@@ -3,21 +3,3 @@
   flex-direction: column;
 }
 
-.banner {
-  min-height: 45vh;
-  background-color: bisque;
-  display: flex;
-}
-
-.banner-description {
-  flex: 1;
-  padding: 50px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.banner > img {
-  flex: 2;
-}
