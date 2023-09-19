@@ -1,4 +1,6 @@
+import { faEuroSign } from "@fortawesome/free-solid-svg-icons";
 import "./productCard.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import QuantityCounter from "./QuantityCounter";
 
 const ProductCard = ({ product }) => {
@@ -9,7 +11,9 @@ const ProductCard = ({ product }) => {
       </div>
       <div className="product-description">
         <span>{product.title}</span>
-        <span>{product.price + " EUR"}</span>
+        <span>
+          {product.price} <FontAwesomeIcon icon={faEuroSign} />
+        </span>
       </div>
       <QuantityCounter product={product} />
     </div>

@@ -6,6 +6,7 @@ import { ProductContext } from "../../context/ProductContextProvider";
 import scrollToTop from "../../utils/scrollToTop";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import logoSmall from "../../assets/logo-small.svg";
 
 const Navbar = () => {
   const { numberOfItemsInCart } = useContext(ProductContext);
@@ -35,14 +36,15 @@ const Navbar = () => {
   return (
     <>
       <nav>
+        {isSticky && <img src={logoSmall} alt="logo small"></img>}
         <div className="nav-div">
-          <NavLink to="/" className="navItem">
+          <NavLink to="/" onClick={scrollToTop} className="navItem">
             Home
           </NavLink>
-          <NavLink to="shop" className="navItem">
+          <NavLink to="shop" onClick={scrollToTop} className="navItem">
             Shop
           </NavLink>
-          <NavLink to="about" className="navItem">
+          <NavLink to="about" onClick={scrollToTop} className="navItem">
             About
           </NavLink>
         </div>
@@ -51,8 +53,8 @@ const Navbar = () => {
           <div className="cart-div">
             <NavLink onClick={scrollToTop} to="cart" className="navItem">
               <FontAwesomeIcon icon={faShoppingCart} />
+              <span> {numberOfItemsInCart}</span>
             </NavLink>
-            <span> {numberOfItemsInCart > 0 && numberOfItemsInCart}</span>
           </div>
         )}
       </nav>

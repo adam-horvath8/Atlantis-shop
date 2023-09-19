@@ -8,6 +8,26 @@ td {
   border-bottom: 1px solid black;
 }
 
+td > button {
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  padding: 11px;
+  cursor: pointer;
+}
+
+td > button:hover {
+  color: var(--second);
+}
+
+td > span {
+  display: flex;
+}
+
+.icon {
+  margin-left: 5px;
+}
+
 th {
   border-bottom: 1px solid black;
   padding: 20px;
@@ -15,12 +35,15 @@ th {
 
 table {
   border-collapse: collapse;
+  font-family: var(--primary-font);
+  color: var(--primary);
 }
 
 .cart-table-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding: 50px;
 }
 
 .cart-table-container > h2 {
@@ -32,15 +55,35 @@ table {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  border: 1px solid black;
+  /* border: 1px solid var(--third); */
   padding: 20px;
+  font-family: var(--primary-font);
 }
 
 .check-out > button {
   margin-bottom: 20px;
+  padding: 15px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.check-out > button:hover {
+  color: var(--second);
 }
 
 .check-out > span {
   margin-bottom: 20px;
   font-size: 2rem;
+  color: var(--primary);
+}
+
+.check-out > link {
+  color: var(--second);
+}
+
+.check-out-link {
+  color: var(--third);
 }

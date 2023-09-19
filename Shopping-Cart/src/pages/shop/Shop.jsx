@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { ProductContext } from "../../context/ProductContextProvider";
 import Banner from "../../components/Banner";
 import shopPage from "../../assets/shop-page.jpg";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Shop = () => {
   const { productsData, error, isLoading } = useContext(ProductContext);
@@ -19,9 +21,12 @@ const Shop = () => {
         imgAlt="Beautifull woman standing in white dress on the beach"
       />
       <div className="shop-container">
+        <h2>Find your desired product:</h2>
         <div className="search-bar-container">
           <input type="text" />
-          <button>Search</button>
+          <button>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </button>
         </div>
         <div className="shop-grid">
           {productsData.map((product) => (

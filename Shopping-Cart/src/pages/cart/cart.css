@@ -3,8 +3,22 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  min-height: 80vh;
 }
 
 .cart-container > h2 {
   padding: 50px;
+  font-family: var(--third-font);
+}
+
+.nav-item {
+  color: white;
+  padding: 15px 30px;
+  padding: 15px;
+  background-color: var(--primary);
+  font-family: var(--primary-font);
+}
+
+.nav-item:hover {
+  color: var(--second);
 }

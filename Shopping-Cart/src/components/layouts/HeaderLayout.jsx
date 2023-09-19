@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import Navbar from "./Navbar";
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import "./headerLayout.css";
 import { ProductContext } from "../../context/ProductContextProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import logoBig from "../../assets/logo-big.svg";
 
 const HeaderLayout = () => {
   const { numberOfItemsInCart } = useContext(ProductContext);
@@ -15,12 +15,12 @@ const HeaderLayout = () => {
     <>
       <header>
         <div className="heading-div">
-          <h1>Trendy Shop</h1>
+          <img src={logoBig} alt="logo" />
 
-          <NavLink className="link" to="cart">
+          <Link className="link" to="cart">
             <FontAwesomeIcon className="cart-icon" icon={faShoppingCart} />
-            <span> {numberOfItemsInCart > 0 && numberOfItemsInCart}</span>
-          </NavLink>
+            <span> {numberOfItemsInCart}</span>
+          </Link>
         </div>
       </header>
     </>

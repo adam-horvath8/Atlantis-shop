@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <div className="home-container">
         <Banner
-          bannerTitle="Welcome"
+          bannerTitle="Welcome!"
           bannerDescription="Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus aperiam nisi quia? Exercitationem harum enim doloremque explicabo incidunt sed, labore nesciunt porro tempora maxime sequi vitae amet nam quisquam veritatis."
           imgSrc={homeImg}
           imgAlt="Friends siting on the bench holding hands with shopping bags around them"

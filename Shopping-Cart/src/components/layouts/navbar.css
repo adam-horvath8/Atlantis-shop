@@ -1,24 +1,52 @@
 nav {
   background-color: var(--primary);
   color: white;
+  font-family: var(--third-font);
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: sticky;
   top: 0;
-  padding: 30px;
+  padding: 30px 10px;
   z-index: 100;
+}
+
+nav > img {
+  height: 50px;
+  margin-left: 10px;
 }
 
 .navItem {
   color: white;
-  margin-left: 15px;
+  padding: 15px 30px;
+}
+
+.navItem:hover {
+  color: var(--second);
 }
 
 .cart-div {
   margin-left: auto;
 }
 
+
+
 .nav-div {
   position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 400px;
+}
+
+.active {
+  background-color: var(--second);
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.active:hover {
+  color: var(--primary);
 }

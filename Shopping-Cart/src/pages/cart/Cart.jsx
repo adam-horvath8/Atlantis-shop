@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"; // Import Link component
 import CartTable from "./CartTable";
 import { ProductContext } from "../../context/ProductContextProvider";
 import "./cart.css";
+import scrollToTop from "../../utils/scrollToTop";
 
 const Cart = () => {
   const { cartItems } = useContext(ProductContext);
@@ -17,7 +18,9 @@ const Cart = () => {
         {!hasValueGreaterThanZero ? (
           <>
             <h2>Your cart is empty</h2>
-            <Link to="/shop">Shop now!</Link>
+            <Link to="/shop" onClick={scrollToTop} className="nav-item">
+              Shop now!
+            </Link>
           </>
         ) : (
           <>

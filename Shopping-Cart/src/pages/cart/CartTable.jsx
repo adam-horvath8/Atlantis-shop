@@ -4,6 +4,8 @@ import { ProductContext } from "../../context/ProductContextProvider";
 import "./cartTable.css";
 import QuantityCounter from "../../components/QuantityCounter";
 import scrollToTop from "../../utils/scrollToTop";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEuroSign } from "@fortawesome/free-solid-svg-icons";
 
 const CartTable = () => {
   const { cartProducts, setCartItems, cartItems } = useContext(ProductContext);
@@ -52,14 +54,24 @@ const CartTable = () => {
                     <img src={product.image} alt="" />
                   </td>
                   <td>{product.title}</td>
-                  <td>{product.price}</td>
+                  <td>
+                    <span>
+                      {product.price}{" "}
+                      <FontAwesomeIcon className="icon" icon={faEuroSign} />
+                    </span>
+                  </td>
                   <td>
                     <QuantityCounter product={product} />
                   </td>
                   <td>
-                    {Number(
-                      (Number(cartItems[product.id]) * product.price).toFixed(2)
-                    ) + " EUR"}
+                    <span>
+                      {Number(
+                        (Number(cartItems[product.id]) * product.price).toFixed(
+                          2
+                        )
+                      )}
+                      <FontAwesomeIcon className="icon" icon={faEuroSign} />
+                    </span>
                   </td>
                   <td>
                     <button onClick={() => handleRemoveBtn(product.id)}>
@@ -72,10 +84,12 @@ const CartTable = () => {
           </table>
         }
         <div className="check-out">
-          <span>{getTotalPrice() + " EUR"}</span>
+          <span>
+            {getTotalPrice()} <FontAwesomeIcon icon={faEuroSign} />
+          </span>
           <button type="button">Checkout</button>
-          <Link to="/shop" onClick={scrollToTop}>
-            Keep Shopping
+          <Link to="/shop" onClick={scrollToTop} className="check-out-link">
+            Keep Shopping!
           </Link>
         </div>
       </div>

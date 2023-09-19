@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+.shop-container > h2 {
+  margin: 20px;
+  font-family: var(--third-font);
+}
+
 .shop-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -12,5 +17,27 @@
 }
 
 .search-bar-container {
-  padding: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar-container > input {
+  height: 40px;
+  padding: 5px;
+  width: 280px;
+  font-size: 1.2rem;
+}
+
+.search-bar-container > button {
+  height: 40px;
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  cursor: pointer;
+  padding: 0px 15px;
+}
+
+.search-bar-container > button:hover {
+  color: var(--second);
 }
