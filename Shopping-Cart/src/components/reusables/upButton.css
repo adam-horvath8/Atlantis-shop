@@ -1,0 +1,11 @@
+.up-btn {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--third);
+  color: white;
+  cursor: pointer;
+  font-size: 1.8rem;
+}

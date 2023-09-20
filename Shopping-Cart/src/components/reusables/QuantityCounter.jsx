@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ProductContext } from "../context/ProductContextProvider";
+import { ProductContext } from "../../context/ProductContextProvider";
 import "./quantityCounter.css";
 
 const QuantityCounter = ({ product }) => {

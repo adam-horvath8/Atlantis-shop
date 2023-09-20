@@ -10,7 +10,7 @@ import Home from "./pages/home/Home";
 import Shop from "./pages/shop/Shop";
 import About from "./pages/about/About";
 import Cart from "./pages/cart/Cart";
-import Error from "./components/Error";
+import Error from "./components/reusables/Error";
 
 import { ProductContextProvider } from "./context/ProductContextProvider";
 import Navbar from "./components/layouts/Navbar";

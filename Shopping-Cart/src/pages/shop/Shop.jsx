@@ -1,14 +1,15 @@
 import "./shop.css";
-import ProductCard from "../../components/ProductCard";
-import { useContext } from "react";
+import ProductCard from "./ProductCard";
+import { useContext, useState } from "react";
 import { ProductContext } from "../../context/ProductContextProvider";
-import Banner from "../../components/Banner";
+import Banner from "../../components/reusables/Banner";
 import shopPage from "../../assets/shop-page.jpg";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import UpButton from "../../components/reusables/UpButton";
 
 const Shop = () => {
   const { productsData, error, isLoading } = useContext(ProductContext);
+
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <>
@@ -23,16 +24,28 @@ const Shop = () => {
       <div className="shop-container">
         <h2>Find your desired product:</h2>
         <div className="search-bar-container">
-          <input type="text" />
-          <button>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </button>
+          <input
+            type="text"
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder={"Search..."}
+          />
         </div>
         <div className="shop-grid">
-          {productsData.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+          {productsData
+            .filter((product) => {
+              if (searchTerm === "") {
+                return product;
+              } else if (
+                product.title.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return product;
+              }
+            })
+            .map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
         </div>
+        <UpButton />
       </div>
     </>
   );

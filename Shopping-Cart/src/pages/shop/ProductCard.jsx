@@ -1,7 +1,7 @@
 import { faEuroSign } from "@fortawesome/free-solid-svg-icons";
 import "./productCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import QuantityCounter from "./QuantityCounter";
+import QuantityCounter from "../../components/reusables/QuantityCounter";
 
 const ProductCard = ({ product }) => {
   return (

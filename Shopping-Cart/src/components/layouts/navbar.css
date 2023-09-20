@@ -8,13 +8,13 @@ nav {
   justify-content: center;
   position: sticky;
   top: 0;
-  padding: 30px 10px;
+  padding: 30px 20px;
   z-index: 100;
 }
 
-nav > img {
+nav img {
   height: 50px;
-  margin-left: 10px;
+  cursor: pointer;
 }
 
 .navItem {
@@ -29,8 +29,6 @@ nav > img {
 .cart-div {
   margin-left: auto;
 }
-
-
 
 .nav-div {
   position: absolute;
@@ -50,3 +48,5 @@ nav > img {
 .active:hover {
   color: var(--primary);
 }
+
+

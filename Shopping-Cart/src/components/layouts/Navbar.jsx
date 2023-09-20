@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import "./navbar.css";
 import Footer from "./Footer";
 import { ProductContext } from "../../context/ProductContextProvider";
@@ -36,7 +36,11 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        {isSticky && <img src={logoSmall} alt="logo small"></img>}
+        {isSticky && (
+          <Link to="/" onClick={scrollToTop}>
+            <img src={logoSmall} alt="logo small"></img>
+          </Link>
+        )}
         <div className="nav-div">
           <NavLink to="/" onClick={scrollToTop} className="navItem">
             Home

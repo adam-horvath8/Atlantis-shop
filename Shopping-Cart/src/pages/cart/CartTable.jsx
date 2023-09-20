@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../../context/ProductContextProvider";
 import "./cartTable.css";
-import QuantityCounter from "../../components/QuantityCounter";
+import QuantityCounter from "../../components/reusables/QuantityCounter";
 import scrollToTop from "../../utils/scrollToTop";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEuroSign } from "@fortawesome/free-solid-svg-icons";

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kalam&family=Rubik&display=swap");
 
 * {
   margin: 0px;
@@ -11,7 +11,7 @@
   --third: #507dbcff;
   --fourth: #bbd1eaff;
   --primary-font: "Rubik", sans-serif;
-  --second-font: "Black Ops One", cursive;
+  --second-font: 'Kalam', cursive;
   --third-font: "Bebas Neue", sans-serif;
 }
 
