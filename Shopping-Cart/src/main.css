@@ -5,13 +5,16 @@
   box-sizing: border-box;
 }
 
+/* body {
+  width: 100vw;
+} */
 :root {
   --primary: #04080fff;
   --second: #a1c6eaff;
   --third: #507dbcff;
   --fourth: #bbd1eaff;
   --primary-font: "Rubik", sans-serif;
-  --second-font: 'Kalam', cursive;
+  --second-font: "Kalam", cursive;
   --third-font: "Bebas Neue", sans-serif;
 }
 

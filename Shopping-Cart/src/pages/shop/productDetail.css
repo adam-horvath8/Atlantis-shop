@@ -1,0 +1,76 @@
+.detail-container {
+  position: fixed;
+  padding: 120px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Semi-transparent background overlay */
+  z-index: 1000; /* Adjust as needed */
+}
+
+.detail-card {
+  background-color: white;
+  padding: 30px;
+  border: var(--primary) 8px solid;
+  display: flex;
+  gap: 30px;
+}
+.detail-card > img {
+  height: 300px;
+  flex: 1;
+  object-fit: contain;
+}
+
+.detail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 2;
+}
+
+.detail-info > h3 {
+  font-family: var(--third-font);
+  font-size: 1.5rem;
+}
+
+.detail-info > p {
+  width: 80%;
+  font-family: var(--primary-font);
+  font-size: 1.2rem;
+}
+
+.detail-button-div {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.detail-button-div > button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.detail-button-div > button:hover {
+  color: var(--third);
+}
+
+.price-counter-div {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}

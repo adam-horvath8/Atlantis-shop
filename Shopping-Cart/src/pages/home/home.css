@@ -6,9 +6,10 @@
 
 .home-item {
   display: flex;
-  gap: 50px;
+  gap: 80px;
   margin-bottom: 50px;
   align-items: center;
+  justify-content: center;
   padding: 80px;
 }
 
@@ -19,10 +20,12 @@
 
 .home-item > img {
   max-width: 50%;
+  height: 60rem;
+  object-fit: cover;
 }
 
 .e-shop-description {
-  max-width: 50%;
+  max-width: 30%;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -49,6 +52,8 @@
 
 .home-info-cards > img {
   width: 100%;
+  height: 40rem;
+  object-fit: cover;
 }
 
 .home-info-cards > h3 {

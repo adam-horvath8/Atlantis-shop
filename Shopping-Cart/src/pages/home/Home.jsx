@@ -1,7 +1,6 @@
 import React from "react";
 import "./home.css";
-import scrollToTop from "../../utils/scrollToTop";
-import Banner from "../../components/reusables/Banner";
+
 import homeImg from "../../assets/home-page.jpg";
 import budget from "../../assets/budget.jpg";
 import dress from "../../assets/dress.jpg";
@@ -10,17 +9,16 @@ import jewelry from "../../assets/jewelry.jpg";
 import laptop from "../../assets/laptop.jpg";
 import mobile from "../../assets/mobile.jpg";
 import UpButton from "../../components/reusables/UpButton";
+import Slider from "../../components/reusables/Slider";
 
 const Home = () => {
   return (
     <>
       <div className="home-container">
-        <Banner
-          bannerTitle="Welcome!"
-          bannerDescription="
+        <Slider
+          sliderTitle="Welcome!"
+          sliderDescription="
           Welcome to our eclectic emporium of mixed goods! At our one-stop shop, we pride ourselves on offering a diverse and delightful selection of products that cater to a wide range of tastes and needs. Whether you're searching for everyday essentials, unique treasures, or thoughtful gifts, you've come to the right place."
-          imgSrc={homeImg}
-          imgAlt="Friends siting on the bench holding hands with shopping bags around them"
         />
 
         <div className="home-item">

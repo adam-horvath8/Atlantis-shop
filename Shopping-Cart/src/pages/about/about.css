@@ -14,6 +14,7 @@
 
 .about-item > img {
   max-width: 40%;
+  max-height: 40rem;
 }
 
 .about-item:nth-child(4) {

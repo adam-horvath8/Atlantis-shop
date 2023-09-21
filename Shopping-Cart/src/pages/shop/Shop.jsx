@@ -42,7 +42,7 @@ const Shop = () => {
               }
             })
             .map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product}></ProductCard>
             ))}
         </div>
         <UpButton />
