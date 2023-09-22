@@ -36,7 +36,7 @@ nav img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 400px;
+  gap: 20px;
 }
 
 .active {
@@ -49,4 +49,8 @@ nav img {
   color: var(--primary);
 }
 
-
+@media (max-width: 600px) {
+  .nav-div {
+    gap: 10px;
+  }
+}

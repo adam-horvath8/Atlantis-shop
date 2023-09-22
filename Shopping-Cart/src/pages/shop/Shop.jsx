@@ -5,11 +5,58 @@ import { ProductContext } from "../../context/ProductContextProvider";
 import Banner from "../../components/reusables/Banner";
 import shopPage from "../../assets/shop-page.jpg";
 import UpButton from "../../components/reusables/UpButton";
+import ReactPaginate from "react-paginate";
+import { faForward } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Shop = () => {
   const { productsData, error, isLoading } = useContext(ProductContext);
 
   const [searchTerm, setSearchTerm] = useState("");
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const productsPerPage = 6;
+  const pagesVisited = pageNumber * productsPerPage;
+
+  const filteredData = () => {
+    // Use the filter method and return the filtered array
+    return productsData.filter((product) => {
+      if (searchTerm === "") {
+        return true; // Include all products if searchTerm is empty
+      } else if (
+        product.title.toLowerCase().includes(searchTerm.toLowerCase())
+      ) {
+        return true; // Include products that match the search term
+      }
+      return false; // Exclude products that don't match the search term
+    });
+  };
+
+  const displayProducts = filteredData()
+    .slice(pagesVisited, pagesVisited + productsPerPage)
+    .map((product) => (
+      <ProductCard key={product.id} product={product}></ProductCard>
+    ));
+
+  const handleSearchChange = (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    setSearchTerm(searchTerm);
+    setPageNumber(0);
+  };
+
+  const pageCount = Math.ceil(filteredData().length / productsPerPage);
+
+  const scrollToSearch = () => {
+    window.scrollTo({
+      top: 555,
+      behavior: "auto",
+    });
+  };
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+    scrollToSearch();
+  };
 
   return (
     <>
@@ -26,25 +73,22 @@ const Shop = () => {
         <div className="search-bar-container">
           <input
             type="text"
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => handleSearchChange(e)}
             placeholder={"Search..."}
           />
         </div>
-        <div className="shop-grid">
-          {productsData
-            .filter((product) => {
-              if (searchTerm === "") {
-                return product;
-              } else if (
-                product.title.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return product;
-              }
-            })
-            .map((product) => (
-              <ProductCard key={product.id} product={product}></ProductCard>
-            ))}
-        </div>
+        <div className="shop-grid">{displayProducts}</div>
+        <ReactPaginate
+          previousLabel={<FontAwesomeIcon icon={faForward} rotation={180} />}
+          nextLabel={<FontAwesomeIcon icon={faForward} />}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName="pagination-buttons"
+          previousLinkClassName="next-previous"
+          nextLinkClassName="next-previous"
+          activeClassName="pagination-active"
+          pageClassName="pagination-pages"
+        />
         <UpButton />
       </div>
     </>
