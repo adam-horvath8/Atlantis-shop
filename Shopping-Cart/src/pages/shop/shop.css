@@ -28,29 +28,19 @@
   padding: 5px;
   width: 300px;
   font-size: 1.2rem;
+  margin-top: 5px;
 }
 
-.search-bar-container > button {
-  height: 40px;
-  border: none;
-  background-color: var(--primary);
-  color: white;
-  cursor: pointer;
-  padding: 0px 15px;
-}
 
-.search-bar-container > button:hover {
-  color: var(--second);
-}
 
 .pagination-buttons {
   display: flex;
   list-style: none;
-  justify-content: space-between;
-  width: 40%;
-  padding: 3rem;
+  padding: 0px;
+  max-width: 100%;
   align-items: center;
   color: var(--primary);
+  margin-bottom: 2rem;
 }
 
 .next-previous {
@@ -70,7 +60,21 @@
 
 .pagination-pages {
   cursor: pointer;
+  margin: 0.5rem;
   font-size: 1.2rem;
   padding: 5px;
   font-family: var(--primary-font);
+}
+
+@media (max-width: 1025px) {
+  .shop-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
 }

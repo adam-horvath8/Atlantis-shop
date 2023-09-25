@@ -4,7 +4,7 @@
   object-fit: contain;
 }
 td {
-  padding: 50px;
+  padding: 30px;
   border-bottom: 1px solid black;
 }
 
@@ -50,40 +50,14 @@ table {
   padding: 50px;
 }
 
-.check-out {
-  margin: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  /* border: 1px solid var(--third); */
-  padding: 20px;
-  font-family: var(--primary-font);
-}
 
-.check-out > button {
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
 
-.check-out > button:hover {
-  color: var(--second);
-}
+@media(max-width:1025px){
+  thead{
+    display: none;
+  }
 
-.check-out > span {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: var(--primary);
-}
-
-.check-out > link {
-  color: var(--second);
-}
-
-.check-out-link {
-  color: var(--third);
+  tr{
+    
+  }
 }

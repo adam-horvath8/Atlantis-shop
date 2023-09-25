@@ -19,13 +19,14 @@
 
 .detail-card {
   background-color: white;
-  padding: 30px;
+  padding: 35px;
   border: var(--primary) 8px solid;
   display: flex;
   gap: 30px;
+  position: relative;
 }
 .detail-card > img {
-  height: 300px;
+  max-height: 300px;
   flex: 1;
   object-fit: contain;
 }
@@ -43,21 +44,18 @@
 }
 
 .detail-info > p {
-  width: 80%;
+  width: 100%;
   font-family: var(--primary-font);
   font-size: 1.2rem;
 }
 
-.detail-button-div {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-.detail-button-div > button {
+.detail-info > button {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
 .button-icon {
@@ -73,4 +71,32 @@
   display: flex;
   align-items: center;
   gap: 50px;
+  margin-top: 10px;
+}
+
+@media (max-width: 1025px) {
+  .detail-container {
+    padding: 100px 20px;
+  }
+
+  .detail-card {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .detail-info > p {
+    font-size: 1rem;
+    max-height: 40vh;
+    word-wrap: break-word;
+    overflow: scroll;
+  }
+  .detail-info > h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .detail-card > img {
+    max-height: 150px;
+  }
 }

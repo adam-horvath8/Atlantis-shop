@@ -29,7 +29,7 @@
   max-height: 300px;
   object-fit: cover;
 }
-.about-item-description:last-child {
+.about-item:nth-child(4) > .about-item-description {
   padding: 80px 80px 0px 80px;
 }
 .about-item-description > ul > li {
@@ -50,4 +50,43 @@
   font-size: 3rem;
   margin-bottom: 20px;
   font-family: var(--third-font);
+}
+
+@media (max-width: 1025px) {
+  .about-item {
+    flex-direction: column;
+    padding: 0px;
+    gap: 10px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+  }
+
+  .about-item-description {
+    padding: 20px;
+  }
+
+  .about-item-description > p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+  .about-item:nth-child(3) > .about-item-description {
+    order: 2;
+  }
+
+  .about-item:nth-child(3) > img {
+    margin-top: 20px;
+  }
+
+  .about-item:nth-child(4) {
+    padding: 0px;
+  }
+
+  .about-item:nth-child(4) > .about-item-description {
+    padding: 20px;
+  }
+
+  .about-item-description > ul > li {
+    font-size: 1.2rem;
+  }
 }

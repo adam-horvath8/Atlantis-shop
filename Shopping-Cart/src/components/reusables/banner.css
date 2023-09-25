@@ -1,5 +1,5 @@
 .banner {
-  height: 45vh;
+  min-height: 45vh;
   background-color: var(--fourth);
   display: flex;
 }
@@ -38,3 +38,11 @@
 .img-container > img:hover {
   transform: scale(1.05);
 }
+
+@media (max-width: 1025px){
+  .banner{
+    flex-direction: column;
+  }
+}
+
+

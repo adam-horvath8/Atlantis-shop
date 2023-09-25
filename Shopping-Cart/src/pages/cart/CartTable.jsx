@@ -1,36 +1,19 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { ProductContext } from "../../context/ProductContextProvider";
+import React from "react";
 import "./cartTable.css";
 import QuantityCounter from "../../components/reusables/QuantityCounter";
-import scrollToTop from "../../utils/scrollToTop";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEuroSign } from "@fortawesome/free-solid-svg-icons";
+import CheckOut from "./CheckOut";
 
-const CartTable = () => {
-  const { cartProducts, setCartItems, cartItems } = useContext(ProductContext);
-
+const CartTable = ({
+  handleRemoveBtn,
+  cartProducts,
+  cartItems,
+  getTotalPrice,
+}) => {
   console.log(cartItems);
 
-  const handleRemoveBtn = (itemId) => {
-    setCartItems((prev) => {
-      return { ...prev, [itemId]: 0 };
-    });
-  };
 
-  const getTotalPrice = () => {
-    const arrayOfPrices = cartProducts.map((product) => {
-      return Number((cartItems[product.id] * product.price).toFixed(2));
-    });
-
-    const totalPrice = arrayOfPrices
-      .reduce((accumulator, currentValue) => {
-        return accumulator + currentValue;
-      }, 0)
-      .toFixed(2);
-
-    return totalPrice;
-  };
 
   return (
     <>
@@ -83,15 +66,7 @@ const CartTable = () => {
             </tbody>
           </table>
         }
-        <div className="check-out">
-          <span>
-            {getTotalPrice()} <FontAwesomeIcon icon={faEuroSign} />
-          </span>
-          <button type="button">Checkout</button>
-          <Link to="/shop" onClick={scrollToTop} className="check-out-link">
-            Keep Shopping!
-          </Link>
-        </div>
+        <CheckOut getTotalPrice={getTotalPrice} />
       </div>
     </>
   );

@@ -10,15 +10,13 @@ const ProductDetail = ({ product, setDetail }) => {
       <div className="detail-card">
         <img src={product.image} alt="" />
         <div className="detail-info">
-          <div className="detail-button-div">
-            <button>
-              <FontAwesomeIcon
-                className="button-icon"
-                onClick={() => setDetail((prev) => !prev)}
-                icon={faCircleXmark}
-              />
-            </button>
-          </div>
+          <button>
+            <FontAwesomeIcon
+              className="button-icon"
+              onClick={() => setDetail((prev) => !prev)}
+              icon={faCircleXmark}
+            />
+          </button>
           <h3>{product.title}</h3>
           <p>{product.description}</p>
           <div className="price-counter-div">
