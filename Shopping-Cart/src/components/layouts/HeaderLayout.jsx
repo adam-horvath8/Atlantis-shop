@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./headerLayout.css";
 import { ProductContext } from "../../context/ProductContextProvider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import logoBig from "../../assets/logo-big.svg";
-import logoSmall from "../../assets/logo-small.svg";
 import dress from "../../assets/dress.jpg"
 
 const HeaderLayout = () => {

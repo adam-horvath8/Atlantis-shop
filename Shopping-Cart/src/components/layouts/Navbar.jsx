@@ -7,15 +7,18 @@ import scrollToTop from "../../utils/scrollToTop";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import logoSmall from "../../assets/logo-small.svg";
+import BurgerMenu from "../reusables/BurgerMenu";
 
 const Navbar = () => {
   const { numberOfItemsInCart } = useContext(ProductContext);
 
   const [isSticky, setIsSticky] = useState(false);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
     const handleScroll = () => {
-      const navbar = document.querySelector("nav"); // Replace with your actual class name
+      const navbar = document.querySelector("nav");
 
       // Check if the Navbar is at the top of the window
       const isAtTop = navbar.getBoundingClientRect().top === 0;
@@ -33,11 +36,38 @@ const Navbar = () => {
     };
   }, []);
 
-  return (
-    <>
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  let content;
+  if (windowWidth < 600) {
+    content = (
+      <nav>
+        <BurgerMenu  />
+        {isSticky && (
+          <div className="cart-div">
+            <NavLink onClick={scrollToTop} to="cart" className="navItem">
+              <FontAwesomeIcon icon={faShoppingCart} />
+              <span> {numberOfItemsInCart}</span>
+            </NavLink>
+          </div>
+        )}
+      </nav>
+    );
+  } else {
+    content = (
       <nav>
         {isSticky && (
-          <Link to="/" onClick={scrollToTop}>
+          <Link to="/" onClick={scrollToTop} className="scrolled-logo">
             <img src={logoSmall} alt="logo small"></img>
           </Link>
         )}
@@ -62,6 +92,12 @@ const Navbar = () => {
           </div>
         )}
       </nav>
+    );
+  }
+
+  return (
+    <>
+      {content}
       <Outlet />
       <Footer />
     </>

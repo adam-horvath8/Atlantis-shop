@@ -20,6 +20,7 @@ nav img {
 .navItem {
   color: white;
   padding: 15px 30px;
+  text-align: center;
 }
 
 .navItem:hover {
@@ -41,7 +42,6 @@ nav img {
 
 .active {
   background-color: var(--second);
-  font-size: 1.4rem;
   color: var(--primary);
 }
 
@@ -52,5 +52,13 @@ nav img {
 @media (max-width: 600px) {
   .nav-div {
     gap: 10px;
+  }
+
+  .scrolled-logo {
+    display: none;
+  }
+
+  nav {
+    padding: 10px 5px;
   }
 }
