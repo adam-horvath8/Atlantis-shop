@@ -32,6 +32,8 @@ const Cart = () => {
       }, 0)
       .toFixed(2);
 
+   
+
     return totalPrice;
   };
 

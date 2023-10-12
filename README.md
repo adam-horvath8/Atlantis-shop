@@ -1,8 +1,5 @@
-# React + Vite
+# Atlantis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Atlantis is a shopping cart project that takes data from a fake shop API and displays it in a new user interface. Browse through the products, find detailed information about them, and add them to the cart.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+live preview: https://atlantis-eshop.netlify.app
