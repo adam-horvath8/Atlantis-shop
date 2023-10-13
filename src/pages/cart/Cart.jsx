@@ -6,6 +6,10 @@ import "./cart.css";
 import scrollToTop from "../../utils/scrollToTop";
 import CartItemsSized from "./CartItemsSized";
 
+
+const name = "adam"
+name
+
 const Cart = () => {
   const { cartProducts, setCartItems, cartItems } = useContext(ProductContext);
 
@@ -14,6 +18,8 @@ const Cart = () => {
   const hasValueGreaterThanZero = Object.values(cartItems).some(
     (value) => value > 0
   );
+
+  
 
   const handleRemoveBtn = (itemId) => {
     setCartItems((prev) => {
@@ -31,8 +37,6 @@ const Cart = () => {
         return accumulator + currentValue;
       }, 0)
       .toFixed(2);
-
-   
 
     return totalPrice;
   };
